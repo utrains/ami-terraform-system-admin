@@ -1,38 +1,24 @@
-# Server creation steps: 
+# Server creation steps:
+
+## 1- Set up the server using terraform and aws :
+- Create a folder
+- Enter in the folder 
+- Clone this repository in your local machine
+- make the terraform command to set-up the server
 ```
+
 cd ~
 mkdir utrains-project
 cd utrains-project
-mkdir project2
-cd project2
-code Vagrantfile
-paste below code into the Vagrantfile and then save.
-vagrant up
-vagrant ssh
+git clone https://github.com/utrains/ami-terraform-system-admin.git
+cd Project1
+terraform init
+terraform apply -auto-approve
 ```
-## Vagrantfile instructions:
+## 2- Login to the server:
+- Copy the output command for terraform to login in the server: something like this 
+[](../media/login_img.PNG)
 
-```
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-Vagrant.configure("2") do |config|
-  # load de centos7 box from vagrant cloud
-  config.vm.box = "utrains/centos7"
-  config.vm.box_version = "3.0"
-  config.vm.network "private_network", ip: "192.168.56.115"
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = 1024
-    #vb.name = "centos-project1"
-    vb.cpus = 2
-  end
-  #change the value of the SSH configuration file, then restart the ssh service
-  config.vm.provision "shell", inline: <<-SHELL
-   sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-   sudo systemctl restart sshd
-  SHELL
-end
-```
 
 # project_linux_administrator  
 
