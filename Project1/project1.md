@@ -17,7 +17,7 @@ terraform apply -auto-approve
 ```
 ## 2- Login to the server:
 - Copy the output command for terraform to login in the server: something like this 
-[](../media/login_img.PNG)
+![alt text](../media/login_img.PNG)
 
 
 # project_linux_administrator  
