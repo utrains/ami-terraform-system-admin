@@ -19,7 +19,7 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 ```
-## min.tf file
+## main.tf file
 
 ```
 # configured aws provider with proper credentials
