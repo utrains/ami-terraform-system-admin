@@ -28,10 +28,14 @@ provider "aws" {
   profile   = "default"
 }
 
+ resource "aws_default_vpc" "default_vpc" {
+ }
+
 # create security group for the ec2 instance
 resource "aws_security_group" "utrains_sonar_security_gp" {
   name        = "ec2 sonar utrains security group"
   description = "allow access on ports 9000 and 22 for sonar and ssh"
+  vpc_id      = aws_default_vpc.default_vpc.id
 
   # allow access on port 9000 for Sonar Server
   ingress {

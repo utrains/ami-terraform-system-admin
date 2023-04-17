@@ -27,11 +27,15 @@ provider "aws" {
   profile   = "default"
 }
 
+ # create default vpc if one does not exit
+ resource "aws_default_vpc" "default_vpc" {
+ }
+ 
 # create security group for the ec2 instance
 resource "aws_security_group" "utrais_security_gp" {
   name        = "ec2 utrains security group"
   description = "allow access on ports 80 and 22 for httpd and ssh"
-
+  vpc_id = aws_default_vpc.default_vpc.id
   # allow access on port 80 for Apache Server
   ingress {
     description      = "httpd access port"
