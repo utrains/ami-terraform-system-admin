@@ -78,8 +78,7 @@ resource "local_file" "ssh_key" {
 
 # launch the ec2 instance and install jenkis
 resource "aws_instance" "ec2_instance" {
-  # ami                    = "ami-0afd7c7d3a00702d3"
-  ami                    = "ami-0cbdb0332336f1f92"
+  ami                    = "ami-03bb8bc4bc848c326"
   instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.utrais_security_gp.id]
   key_name               = aws_key_pair.instance_key.key_name
@@ -163,3 +162,8 @@ output "ssh_connection_command" {
 #### It should display below message on the browser
 ## "I feel like I am sitting in the office working for real and making the big $$$$"
 
+## Note : After working, don't forget to delete the infrastructure using the command below:
+
+```
+terraform destroy -auto-approve
+```

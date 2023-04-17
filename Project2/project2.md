@@ -85,8 +85,7 @@ resource "local_file" "ssh_key" {
 
 # launch the ec2 instance and install jenkis
 resource "aws_instance" "ec2_instance" {
-  # ami                    = "ami-0afd7c7d3a00702d3"
-  ami                    = "ami-0a59b5a57ec4e20e7"
+  ami                    = "ami-03bb8bc4bc848c326"
   instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.utrais_security_gp.id]
   key_name               = aws_key_pair.instance_key.key_name
@@ -152,3 +151,10 @@ output "ssh_connection_command" {
 ### 9- what is the default port for these services?  SSH, HTTP, HTTPS, FTP , DNS 
 ### 10- There is a file on the system that contains a list of employees called emp.csv run a command that will display just the emails of all employees.
 ### 11-Consider you are sitting on an interview, describe a troubleshooting scenario you encounter.
+
+
+## Note : After working, don't forget to delete the infrastructure using the command below:
+
+```
+terraform destroy -auto-approve
+```

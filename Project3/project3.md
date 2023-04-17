@@ -122,3 +122,9 @@ output "ssh_connection_command" {
 ### a- Go ahead and automate the installation of Sonarqube, using a bash shell script. ( we should be able to copy the script to the server and execute it.)
 
 ### b- For better collaboration at work, we need to keep the scripts in github. Create a repo in github called middleware-scripts and push your scripts there. 
+
+## Note : After working, don't forget to delete the infrastructure using the command below:
+
+```
+terraform destroy -auto-approve
+```
