@@ -80,16 +80,16 @@ resource "local_file" "ssh_key" {
   content  = tls_private_key.instance_key.private_key_pem
 }
 
-# launch the ec2 instance and install jenkis
+# launch the ec2 instance
 resource "aws_instance" "ec2_instance" {
-  ami                    = "ami-03bb8bc4bc848c326"
+  ami                    = "ami-0a2d1c7e6dcd217b0"
   instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.utrais_security_gp.id]
   key_name               = aws_key_pair.instance_key.key_name
   //user_data            = file("installed_script.sh")
 
   tags = {
-    Name = "utrains Server and ssh security group"
+    Name = "linux project"
   }
 }
 # an empty resource block
