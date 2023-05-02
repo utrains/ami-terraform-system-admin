@@ -1,10 +1,10 @@
 # Server creation steps:
 
 ## 1- Set up the server using terraform and aws :
-- Create a folder nammed __utrains-project__
+- Create a folder named __utrains-project__
 - Enter in the folder then create the file nammed __main.tf__, using __Visual Studio Code__
-- copy the content of the main.tf file form this page to your own file
-- make the terraform command to set-up the server
+- Copy the content of the main.tf file from this page to your own file
+- Run the terraform commands to set-up the server
 
 
 ```
@@ -17,7 +17,7 @@ code main.tf
 paste below code into the main.tf file and then save.
 terraform init
 terraform plan
-terraform apply -auto-approve
+terraform apply --auto-approve
 ```
 ## main.tf file
 
@@ -126,7 +126,7 @@ output "ssh_connection_command" {
 
 #### 2.  There is a file on the system called success.txt, run a command to display its content.
 
-#### 3. Add this sentence to the file success.txt  "I am staying laser focus and wont let anything distract me at all"
+#### 3.  Add this sentence to the file success.txt  "I am staying laser focus and wont let anything distract me at all"
 
 #### 4.  What group does the success.txt file belongs to ?  
 
@@ -169,5 +169,5 @@ output "ssh_connection_command" {
 ## Note : After working, don't forget to delete the infrastructure using the command below:
 
 ```
-terraform destroy -auto-approve
+terraform destroy --auto-approve
 ```
